@@ -18,7 +18,7 @@ let Tesla = require('tesla-owners-api')
 async function main() {
   try {
     var teslaApi = await Tesla.login({email: '<YOUR_EMAIL>', password: '<YOUR_PASSWORD>'})
-    // tesla now contains the vehicles list as well as the auth info
+    // teslaApi now contains the vehicles list as well as the auth info
     var auth = teslaApi.auth
     // Get first vehicle from the vehicles list decorated with all the functions
     var vehicle = teslaApi.vehicles[0]
