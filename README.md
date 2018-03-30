@@ -27,12 +27,14 @@ async function main() {
     var chargeState = await vehicle.getChargeState()
     console.log(chargeState)
     // Or set stuff
-    var closeRearTrunk = await vehicle.setRearTrunkOpen()
+    await vehicle.setRearTrunkOpen()
     console.log('Tesla Owners API FTW!')
   } catch (err) {
     console.error(err.stack)
   }
 }
+
+main()
 ```
 
 **Note that responses follow JS camelCase convention**
