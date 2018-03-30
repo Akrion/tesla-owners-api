@@ -18,15 +18,19 @@ import Tesla from "tesla-owners-api"
 async function main() {
   try {
     var tesla = await Tesla.login({email: '<YOUR_EMAIL>', password: '<YOUR_PASSWORD>'})
+    // tesla now contains the vehicles list as well as the auth info
+    var auth = tesla.auth
+    // Get first vehicle from the vehicles list decorated with all its gets & sets
     var vehicle = tesla.vehicles[0]
     // Wake up the sleeping beauty first
     await vehicle.setWakeUp()
-    // Now get the data
-    var isMobileEnabled = await vehicle.getIsMobileEnabled()
-    console.log(isMobileEnabled)
+    // Now get stuff
+    var state = await vehicle.getState()
+    console.log(state)
     var chargeState = await vehicle.getChargeState()
     console.log(chargeState)
     // Or set stuff
+    await vehicle.setHonkHorn()
     await vehicle.setRearTrunkOpen()
     console.log('Tesla Owners API FTW!')
   } catch (err) {
