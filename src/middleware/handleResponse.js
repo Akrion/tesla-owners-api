@@ -11,9 +11,5 @@ module.exports = (response) => {
     response.data.expiresAtDate = luxon.DateTime.fromJSDate(createdAt).plus({ seconds: expiresInSeconds }).toUTC().toJSDate()
   }
   // Only return the needed data part to simplify things
-  if(_.has('data.response', response)) {
-    return _.get('data.response', response)
-  } else {
-    return response.data
-  }
+  return _.has('data.response', response) ? _.get('data.response', response) : response.data    
 }
