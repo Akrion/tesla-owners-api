@@ -1,0 +1,27 @@
+{
+  "name": "tesla-owners-api",
+  "version": "0.0.1",
+  "description": "Promisified Tesla Owners API For NodeJS!",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "debug": "node src/debug index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tesla",
+    "api",
+    "akrion"
+  ],
+  "author": "Ilian Alexiev (Akrion)",
+  "license": "MIT",
+  "repository": "Akrion/tesla-owners-api",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.5",
+    "luxon": "^1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  }
+}
